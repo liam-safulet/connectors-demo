@@ -24,6 +24,7 @@ export function WagmiContent() {
                 }, 1000)
             }}>
                 <Image
+                    alt='1'
                     width={30}
                     src={BINANCE_WALLET_ICON}
                 />
@@ -36,6 +37,7 @@ export function WagmiContent() {
                         c.connect()
                     }} style={{display: 'flex', marginBottom: 10, alignItems: 'center', gap: 5}} key={c.name}>
                         <Image
+                            alt='1'
                             width={30}
                             src={c.icon}
                         />

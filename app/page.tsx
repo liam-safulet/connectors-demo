@@ -19,7 +19,7 @@ export default function Home() {
       <div className='flex flex-col gap-5'>
         <ReownProvider>
           Reown:
-             {/*@ts-ignore*/}
+             {/*@ts-expect-error expected*/}
           <appkit-button/>
         </ReownProvider>
         <RainbowProvider>

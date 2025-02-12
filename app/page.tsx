@@ -10,7 +10,7 @@ import '@rainbow-me/rainbowkit/styles.css';
 // import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
 // import {config} from "./connectors/wagmi";
 // import {WagmiProvider} from "wagmi";
-import {QueryClient} from "@tanstack/react-query";
+// import {QueryClient} from "@tanstack/react-query";
 // import {WagmiContent} from "./WagmiContent";
 
 // const queryClient = new QueryClient();

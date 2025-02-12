@@ -6,8 +6,9 @@ import {projectId} from "../constants";
 export const config = createConfig({
     chains: [mainnet, base],
     connectors: [
-        walletConnect({projectId }),
-        walletConnect({projectId }),
+        // @ts-expect-error expected
+        globalThis.isBinance ? undefined: walletConnect({projectId}),
+        walletConnect({projectId}),
     ],
     transports: {
         [mainnet.id]: http(),

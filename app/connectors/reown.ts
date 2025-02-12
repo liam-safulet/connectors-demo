@@ -1,10 +1,9 @@
-import { createAppKit } from '@reown/appkit/react'
+import {createAppKit} from '@reown/appkit/react'
 
-import { arbitrum, mainnet } from '@reown/appkit/networks'
-import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
+import {arbitrum, mainnet} from '@reown/appkit/networks'
+import {WagmiAdapter} from '@reown/appkit-adapter-wagmi'
 import type {AppKitNetwork} from '@reown/appkit/networks'
 import {projectId} from "../constants";
-
 
 
 // 2. Create a metadata object - optional
@@ -28,8 +27,8 @@ export const reownWagmiAdapter = new WagmiAdapter({
 createAppKit({
     adapters: [reownWagmiAdapter],
     enableEIP6963: true,
-    includeWalletIds: ['8a0ee50d1f22f6651afcae7eb4253e52a3310b90af5daef78a8c4929a9bb99d4'],
-    featuredWalletIds: ['8a0ee50d1f22f6651afcae7eb4253e52a3310b90af5daef78a8c4929a9bb99d4'],
+    // @ts-expect-error expected
+    featuredWalletIds: [window.isBinance ? '': '8a0ee50d1f22f6651afcae7eb4253e52a3310b90af5daef78a8c4929a9bb99d4'],
     networks,
     projectId,
     metadata,

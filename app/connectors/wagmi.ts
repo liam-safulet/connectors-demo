@@ -8,7 +8,6 @@ export const config = createConfig({
     connectors: [
         // @ts-expect-error expected
         globalThis.binancew3w ? undefined: walletConnect({projectId}),
-        walletConnect({projectId, relayUrl: ''}),
     ],
     transports: {
         [mainnet.id]: http(),

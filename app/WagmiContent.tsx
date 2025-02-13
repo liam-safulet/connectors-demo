@@ -15,9 +15,9 @@ export function WagmiContent() {
     const wcConnectorIndex = connectors.findIndex(c => c.name === 'WalletConnect')
     const restConnectors = connectors.filter((c, index) => index !== wcConnectorIndex)
     return <>
-        <Button onClick={() => setIsOpen(true)}>Wagmi Connect</Button>
+        <Button style={{width: 140}} onClick={() => setIsOpen(true)}>Wagmi Connect</Button>
         <Modal title="Basic Modal" open={isOepn} onOk={() => setIsOpen(false)} onCancel={() => setIsOpen(false)}>
-            <div style={{display: 'flex', marginBottom: 10, alignItems: 'center', gap: 5}} onClick={() => {
+            <div style={{display: 'flex', marginBottom: 10, alignItems: 'center', gap: 5, cursor: 'pointer'}} onClick={() => {
                 connector.connect()
                 setTimeout(() => {
                     setIsOpen(false)

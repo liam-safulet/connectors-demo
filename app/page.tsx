@@ -8,12 +8,11 @@ import {
   DynamicWidget,
 } from "@dynamic-labs/sdk-react-core";
 import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
-import {config} from "./connectors/wagmi";
-import {WagmiProvider} from "wagmi";
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import {WagmiContent} from "./WagmiContent";
+// import {config} from "./connectors/wagmi";
+// import {WagmiProvider} from "wagmi";
+// import {QueryClient} from "@tanstack/react-query";
+// import {WagmiContent} from "./WagmiContent";
 
-const queryClient = new QueryClient();
 export default function Home() {
     return (
       <div className='flex flex-col gap-5'>
@@ -39,14 +38,14 @@ export default function Home() {
           Dynamic xyz:
           <DynamicWidget />
         </DynamicContextProvider>
-        <WagmiProvider config={config}>
-          <QueryClientProvider client={queryClient}>
-            <div>
-              Wagmi:
-            </div>
-            <WagmiContent/>
-          </QueryClientProvider>
-        </WagmiProvider>
+        {/*<WagmiProvider config={config}>*/}
+        {/*  <QueryClientProvider client={queryClient}>*/}
+        {/*    <div>*/}
+        {/*      Wagmi:*/}
+        {/*    </div>*/}
+        {/*    <WagmiContent/>*/}
+        {/*  </QueryClientProvider>*/}
+        {/*</WagmiProvider>*/}
       </div>
   )
 }

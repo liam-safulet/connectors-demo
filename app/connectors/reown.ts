@@ -28,7 +28,7 @@ createAppKit({
     adapters: [reownWagmiAdapter],
     enableEIP6963: true,
     // @ts-expect-error expected
-    featuredWalletIds: [globalThis.isBinance ? '': '8a0ee50d1f22f6651afcae7eb4253e52a3310b90af5daef78a8c4929a9bb99d4'],
+    featuredWalletIds: ['971e689d0a5be527bac79629b4ee9b925e82208e5168b733496a09c0faed0709'],
     networks,
     projectId,
     metadata,

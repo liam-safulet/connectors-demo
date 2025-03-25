@@ -51,7 +51,7 @@ export function EvmTransactionButton({ chainId }: EvmTransactionButtonProps) {
         chainId: toHexString(chainId)
       }
       console.log('tx:',p)
-      // @ts-expect-error
+      // @ts-expect-error 123123
       const hash = await walletClient.sendTransaction(p)
       
       setTxHash(hash)

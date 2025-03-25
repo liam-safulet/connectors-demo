@@ -8,6 +8,7 @@ import {
   DynamicWidget,
 } from "@dynamic-labs/sdk-react-core";
 import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
+import { EvmTransactionButton } from "./components/EvmTransactionButton";
 // import {config} from "./connectors/wagmi";
 // import {WagmiProvider} from "wagmi";
 // import {QueryClient} from "@tanstack/react-query";
@@ -18,8 +19,8 @@ export default function Home() {
       <div className='flex flex-col gap-5'>
         <ReownProvider>
           Reown:
-             {/*@ts-expect-error expected*/}
           <appkit-button/>
+          <EvmTransactionButton chainId={1} />
         </ReownProvider>
         <RainbowProvider>
           RainbowKit:

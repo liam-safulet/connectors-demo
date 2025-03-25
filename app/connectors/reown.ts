@@ -1,6 +1,6 @@
 import {createAppKit} from '@reown/appkit/react'
 
-import {arbitrum, mainnet} from '@reown/appkit/networks'
+import {arbitrum, bsc, mainnet} from '@reown/appkit/networks'
 import {WagmiAdapter} from '@reown/appkit-adapter-wagmi'
 import type {AppKitNetwork} from '@reown/appkit/networks'
 import {projectId} from "../constants";
@@ -15,7 +15,7 @@ const metadata = {
 }
 
 // 3. Set the networks
-export const networks = [mainnet, arbitrum] as [AppKitNetwork, ...AppKitNetwork[]]
+export const networks = [mainnet, arbitrum, bsc] as [AppKitNetwork, ...AppKitNetwork[]]
 
 // 4. Create Wagmi Adapter
 export const reownWagmiAdapter = new WagmiAdapter({
@@ -27,7 +27,6 @@ export const reownWagmiAdapter = new WagmiAdapter({
 createAppKit({
     adapters: [reownWagmiAdapter],
     enableEIP6963: true,
-    // @ts-expect-error expected
     featuredWalletIds: ['971e689d0a5be527bac79629b4ee9b925e82208e5168b733496a09c0faed0709'],
     networks,
     projectId,

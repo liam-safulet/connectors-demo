@@ -5,13 +5,16 @@ import {rainbowKitConfig} from "./connectors/rainbowkit";
 import {RainbowKitProvider} from "@rainbow-me/rainbowkit";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 
+const queryClient = new QueryClient()
+
 export const ReownProvider = ({children}: { children: ReactNode }) => {
     return <WagmiProvider config={reownWagmiAdapter.wagmiConfig}>
-        {children}
+        <QueryClientProvider client={queryClient}>
+            {children}
+        </QueryClientProvider>
     </WagmiProvider>
 }
 
-const queryClient = new QueryClient();
 export const RainbowProvider = ({children}: { children: ReactNode }) => {
     return <WagmiProvider config={rainbowKitConfig}>
         <QueryClientProvider client={queryClient}>

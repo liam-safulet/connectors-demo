@@ -14,13 +14,8 @@ export function EvmTransactionButton({ chainId }: EvmTransactionButtonProps) {
   // Wagmi hooks
   const { address, isConnected } = useAccount()
   const { connect, connectors } = useConnect()
-  const { disconnect } = useDisconnect()
-  const { switchChain } = useSwitchChain()
   const { data: walletClient } = useWalletClient()
   const publicClient = usePublicClient()
-
-  // 将十进制转换为十六进制字符串，带有0x前缀
-  const toHexString = (num: number) => `0x${num.toString(16)}`
 
   const handleTransaction = async () => {
     setError(null)
@@ -56,13 +51,14 @@ export function EvmTransactionButton({ chainId }: EvmTransactionButtonProps) {
         chainId: toHexString(chainId)
       }
       console.log('tx:',p)
+      // @ts-ignore
       const hash = await walletClient.sendTransaction(p)
       
       setTxHash(hash)
       console.log('交易哈希:', hash)
       
       // 等待交易确认
-      await publicClient.waitForTransactionReceipt({ hash })
+      await publicClient?.waitForTransactionReceipt({ hash })
       alert(`交易成功! 哈希: ${hash}`)
       
     } catch (err) {

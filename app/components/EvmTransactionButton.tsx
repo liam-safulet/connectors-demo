@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { useAccount, useConnect, useDisconnect, useSwitchChain, useWalletClient, usePublicClient } from 'wagmi'
+import { useAccount, useConnect, useWalletClient, usePublicClient } from 'wagmi'
 
 interface EvmTransactionButtonProps {
   chainId: number // 这是十进制接口，方便使用
@@ -51,7 +51,7 @@ export function EvmTransactionButton({ chainId }: EvmTransactionButtonProps) {
         chainId: toHexString(chainId)
       }
       console.log('tx:',p)
-      // @ts-ignore
+      // @ts-expect-error
       const hash = await walletClient.sendTransaction(p)
       
       setTxHash(hash)
